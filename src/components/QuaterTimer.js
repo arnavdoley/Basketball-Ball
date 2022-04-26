@@ -11,12 +11,12 @@ export default function QuaterTimer() {
       interval = setInterval(() => {
         setquater((prevTime) => prevTime - 10);
         setshot((pre) => pre - 10);
-      }, 10); console.log(quater)
+      }, 10); 
       if(quater<24000){
         setshot(0)
       }
      
-      else if(shot==1000 && quater>24000){
+      else if(shot===1000 && quater>24000){
       setgameOn(false)
       }
     } else {
@@ -40,7 +40,7 @@ export default function QuaterTimer() {
         <span>{("0" + Math.floor((shot / 10) % 100)).slice(-2)}</span>
       </h2>)}
       <h4><button  className="btn btn-outline-warning" onClick={()=>{setquater(720000)}}>quater</button><button   onClick={()=>{setquater(300000)}} className="btn btn-outline-warning">ot</button></h4>
-      {!gameOn && quater==720000 &&shot == 24000 &&( <button
+      {!gameOn && quater===720000 &&shot === 24000 &&( <button
         onClick={() => setgameOn(true)}
         className="btn btn-outline-success "
       >

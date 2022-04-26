@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 export default function PlayerInfo() {
   const [name, setName] = useState({
@@ -22,7 +22,7 @@ export default function PlayerInfo() {
     };
     
     
-    if(name.team=="Home"){
+    if(name.team==="Home"){
     setHome([...Home, tab]);
     }
     else{
@@ -33,8 +33,8 @@ export default function PlayerInfo() {
     jersey: "",})
   }
   const foulDec=(index ,team)=>{
-     console.log(team)
-    if(team=="Away"){
+     
+    if(team==="Away"){
     Away[index].foul=Away[index].foul-1
     setAway([...Away])
     }
@@ -47,7 +47,7 @@ export default function PlayerInfo() {
   const foulInc=(index ,team ,foul)=>{
  
 
-     if(team=="Away"){
+     if(team==="Away"){
    Away[index].foul=Away[index].foul+1
    setAway([...Away])
    }
@@ -59,7 +59,7 @@ export default function PlayerInfo() {
  
  }
  const remove =(index , team)=>{
-  if(team=="Home"){
+  if(team==="Home"){
     Home.splice(index,1)
     setHome([...Home])
   }
@@ -84,13 +84,13 @@ export default function PlayerInfo() {
           aria-describedby="emailHelp"
           placeholder="Enter name"
         ></input>
-        <label for="cars">Choose team:</label>
+        <label >Choose team:</label>
 
         <select name="team" id="cars" onChange={setValue} value={name.team}>
           <option value="Home">Home</option>
           <option value="Away">Away</option>
         </select>
-        <label for="jerseyNumber">Jersey Number</label>
+        <label >Jersey Number</label>
         <input
           type="number"
           name="jersey"
